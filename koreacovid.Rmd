@@ -1,5 +1,5 @@
 ---
-title: "Initial Korean covid 19"
+title: "Initial Korean Covid 19"
 author: "Ever De Leon"
 date: "Spring 2024"
 output:
@@ -65,7 +65,13 @@ With these results it shows that Korea was heavily affected by the deaths of the
 
 ## Inferential results 
 
+```{r}
+chi_sq_test <- chisq.test(cont_table)
+print(chi_sq_test)
+```
 
+This Chi-squared test gives us a p value of 0.000002 which is less than 0.05.
 
 ## Conclusions
 
+Based on the analysis of the contingency table and the results of the chi-square test (p < 0.05), there is strong evidence to reject the null hypothesis. This suggests that there is a significant association between the country of origin and the outcome of mortality of the individuals. Therefore we would reject the $H_0$.
