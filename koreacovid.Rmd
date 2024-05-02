@@ -31,27 +31,39 @@ state of a patient must be died or alive - we adjust that as well
   
 # Your Question - Is dying independent of sex?
 
+```{r}
+plot(deceased_date~Sex,data=kRdata)
+```
 
-
-
+This graph shows the number of deceased cases in males and females. The total is very low for both but there is a slight edge in deaths towards Males.
 
 
 ## Graphical results - use ggplot commands to do this  
 
+```{r}
+basicNN <- ggplot(kRdata,aes(y=country,x=result))
+```
+ 
+```{r}
+basicNN + geom_point()
+```
 
-
-  
-
-
-
-
-
-  
+This graph shows that the countries effected by the deaths of Covid19 were Mongolia and Korea.
+   
 ## Numerical results
+
+```{r}
+cont_table <- table(kRdata$country, kRdata$result)
+```
+
+```{r}
+print(cont_table)
+```
+
+With these results it shows that Korea was heavily affected by the deaths of the Covid 19 disease. To get this plot I simply made a cont_table with the different results from each country, which also revealed one death in Mongolia.
 
 
 ## Inferential results 
-
 
 
 
